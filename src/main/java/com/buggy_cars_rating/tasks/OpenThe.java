@@ -7,6 +7,9 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Open;
 
+/*
+ * Task que permite abrir una página web especificada como un PageObject.
+ */
 public class OpenThe implements Task {
 
     private final PageObject page;

@@ -4,6 +4,10 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.targets.Target;
 
+
+/*
+ * Question que válida si un elemento web contiene un mensaje esperado.
+ */
 public class Validate implements Question<Boolean> {
 
     private final String says;

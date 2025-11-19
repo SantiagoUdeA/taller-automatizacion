@@ -6,6 +6,9 @@ import com.buggy_cars_rating.user_interfaces.HomePage;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 
+/*
+* Tarea para llenar el formulario de inicio de sesión y enviarlo.
+*/
 public class FillLoginForm implements Task {
 
     private final String username;
