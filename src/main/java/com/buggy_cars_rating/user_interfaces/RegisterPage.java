@@ -4,7 +4,7 @@ import net.serenitybdd.annotations.DefaultUrl;
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.screenplay.targets.Target;
 
-@DefaultUrl("https://buggy.justtestit.org/register")
+@DefaultUrl("/register")
 public class RegisterPage extends PageObject {
 
     public static final Target USERNAME_INPUT = Target.the("Username input field")

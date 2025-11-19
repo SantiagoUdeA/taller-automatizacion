@@ -1,10 +1,8 @@
 package com.buggy_cars_rating.user_interfaces;
 
-import net.serenitybdd.annotations.DefaultUrl;
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.screenplay.targets.Target;
 
-@DefaultUrl("https://buggy.justtestit.org/")
 public class HomePage extends PageObject {
 
     public static final Target USERNAME_INPUT = Target.the("Username input field")

@@ -4,7 +4,7 @@ import net.serenitybdd.annotations.DefaultUrl;
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.screenplay.targets.Target;
 
-@DefaultUrl("https://buggy.justtestit.org/model/ckl2phsabijs71623vk0%7Cckl2phsabijs71623vog")
+@DefaultUrl("/model/ckl2phsabijs71623vk0%7Cckl2phsabijs71623vog")
 public class CarModelPage extends PageObject {
 
     public static final Target SPECIFICATIONS_CARD = Target.the("Specifications card")
