@@ -24,7 +24,7 @@ import org.openqa.selenium.WebDriver;
 
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 
-public class HU2StepDefinitions {
+public class UserLoginStepDefinitions {
 
     private final UserDto userDto = RandomUserFactory.generateRandomUser();
     public final Actor user = Actor.named(userDto.firstName());
@@ -60,7 +60,6 @@ public class HU2StepDefinitions {
                 )
         );
         WaitTime.waitForSeconds(2);
-
     }
 
     @And("I am on the login page")
@@ -100,5 +99,6 @@ public class HU2StepDefinitions {
     @Then("the system shows me an error message {string}")
     public void theSystemShowsMeAnErrorMessage(String message) {
         user.should(seeThat(Element.withTarget(HomePage.INVALID_LOGIN_MESSAGE).says(message)));
+        WaitTime.waitFiveSeconds();
     }
 }

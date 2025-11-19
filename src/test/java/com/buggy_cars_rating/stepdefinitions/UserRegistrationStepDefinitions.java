@@ -20,7 +20,7 @@ import org.openqa.selenium.WebDriver;
 
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 
-public class HU1StepDefinitions {
+public class UserRegistrationStepDefinitions {
 
     private final UserDto userDto = RandomUserFactory.generateRandomUser();
     public final Actor user = Actor.named(userDto.firstName());
@@ -70,5 +70,6 @@ public class HU1StepDefinitions {
                         password
                 )
         );
+        WaitTime.waitFiveSeconds();
     }
 }

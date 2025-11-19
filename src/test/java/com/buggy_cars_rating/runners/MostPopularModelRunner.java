@@ -14,5 +14,5 @@ import org.junit.runner.RunWith;
                 "json:target/cucumber/hu3_most_popular_car.json"
         }
 )
-public class HU3Runner {}
+public class MostPopularModelRunner {}
 

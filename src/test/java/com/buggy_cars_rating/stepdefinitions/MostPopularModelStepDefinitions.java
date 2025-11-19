@@ -1,7 +1,6 @@
 package com.buggy_cars_rating.stepdefinitions;
 
 import com.buggy_cars_rating.dto.UserDto;
-import com.buggy_cars_rating.questions.Element;
 import com.buggy_cars_rating.questions.IsVisible;
 import com.buggy_cars_rating.tasks.NavigateTo;
 import com.buggy_cars_rating.tasks.OpenThe;
@@ -23,7 +22,7 @@ import org.openqa.selenium.WebDriver;
 
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 
-public class HU3StepDefinitions {
+public class MostPopularModelStepDefinitions {
 
     private final UserDto userDto = RandomUserFactory.generateRandomUser();
     public final Actor user = Actor.named(userDto.firstName());
