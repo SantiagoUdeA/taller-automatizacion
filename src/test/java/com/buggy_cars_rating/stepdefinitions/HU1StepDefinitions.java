@@ -1,7 +1,7 @@
 package com.buggy_cars_rating.stepdefinitions;
 
 import com.buggy_cars_rating.dto.UserDto;
-import com.buggy_cars_rating.questions.AlertDisplayed;
+import com.buggy_cars_rating.questions.Validate;
 import com.buggy_cars_rating.tasks.FillRegistrationForm;
 import com.buggy_cars_rating.tasks.OpenThe;
 import com.buggy_cars_rating.user_interfaces.RegisterPage;
@@ -38,7 +38,7 @@ public class HU1StepDefinitions {
     @Given("that I am on the registration page")
     public void thatIAmOnTheRegistrationPage() {
         user.attemptsTo(OpenThe.navigator(new RegisterPage()));
-        WaitTime.waitForSeconds(5);
+        WaitTime.waitFiveSeconds();
     }
 
     @When("I enter my registration data")
@@ -51,13 +51,13 @@ public class HU1StepDefinitions {
                     userDto.password()
             )
         );
-        WaitTime.waitForSeconds(5);
+        WaitTime.waitFiveSeconds();
     }
 
     @Then("the system shows me the message {string}")
     public void theSystemShowsMeTheMessage(String message) {
-        user.should(seeThat(AlertDisplayed.withMessage(message)));
-        WaitTime.waitForSeconds(5);
+        user.should(seeThat(Validate.thisTarget(RegisterPage.ALERT_MESSAGE).says(message)));
+        WaitTime.waitFiveSeconds();
     }
 
     @When("I enter a password {string}")

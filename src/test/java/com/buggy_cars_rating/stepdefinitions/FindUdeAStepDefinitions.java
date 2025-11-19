@@ -11,7 +11,7 @@ import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 import org.openqa.selenium.WebDriver;
-import com.buggy_cars_rating.questions.Validate;
+import com.buggy_cars_rating.questions.Validatee;
 import com.buggy_cars_rating.tasks.FindThe;
 import com.buggy_cars_rating.tasks.OpenThe;
 import com.buggy_cars_rating.user_interfaces.GooglePage;
@@ -42,7 +42,7 @@ public class FindUdeAStepDefinitions {
     public void iShouldSeeTgeUdeASOfficialWebsite() {
         user.should(
                 GivenWhenThen.seeThat(
-                        Validate.thePageUrl("https://www.udea.edu.co/wps/portal/udea/web/inicio")
+                        Validatee.thePageUrl("https://www.udea.edu.co/wps/portal/udea/web/inicio")
                 )
         );
     }

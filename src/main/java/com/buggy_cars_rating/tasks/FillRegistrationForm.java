@@ -3,7 +3,6 @@ package com.buggy_cars_rating.tasks;
 import com.buggy_cars_rating.interactions.ClickOn;
 import com.buggy_cars_rating.interactions.EnterTheValue;
 import com.buggy_cars_rating.user_interfaces.RegisterPage;
-import com.buggy_cars_rating.utils.WaitTime;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 
@@ -37,8 +36,8 @@ public class FillRegistrationForm implements Task {
                 EnterTheValue.into(RegisterPage.FIRST_NAME_INPUT, firstName),
                 EnterTheValue.into(RegisterPage.LAST_NAME_INPUT, lastName),
                 EnterTheValue.into(RegisterPage.PASSWORD_INPUT, password),
-                EnterTheValue.into(RegisterPage.CONFIRM_PASSWORD_INPUT, password)
+                EnterTheValue.into(RegisterPage.CONFIRM_PASSWORD_INPUT, password),
+                ClickOn.element(RegisterPage.REGISTER_BUTTON)
         );
-        actor.attemptsTo(ClickOn.element(RegisterPage.REGISTER_BUTTON));
     }
 }

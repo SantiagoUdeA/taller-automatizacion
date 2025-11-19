@@ -37,6 +37,7 @@ ext {
     junit_vintage_engine_version="5.13.0"
     logback_classic_version="1.2.10"
     assertj_core_version="3.23.1"
+    lombokVersion = '1.18.42'
 }
 
 dependencies {
@@ -58,6 +59,11 @@ dependencies {
         testImplementation "org.junit.vintage:junit-vintage-engine:${junit_vintage_engine_version}"
         implementation "ch.qos.logback:logback-classic:${logback_classic_version}"
         testImplementation "org.assertj:assertj-core:${assertj_core_version}"
+
+        compileOnly "org.projectlombok:lombok:${lombokVersion}"
+        annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
+        testCompileOnly "org.projectlombok:lombok:${lombokVersion}"
+        testAnnotationProcessor "org.projectlombok:lombok:${lombokVersion}"
     }
 }
 

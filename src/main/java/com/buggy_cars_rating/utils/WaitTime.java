@@ -14,4 +14,8 @@ public class WaitTime {
             Thread.currentThread().interrupt();
         }
     }
+
+    public static void waitFiveSeconds() {
+        waitForSeconds(5);
+    }
 }
