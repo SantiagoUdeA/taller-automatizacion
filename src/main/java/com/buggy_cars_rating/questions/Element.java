@@ -8,12 +8,12 @@ import net.serenitybdd.screenplay.targets.Target;
 /*
  * Question que válida si un elemento web contiene un mensaje esperado.
  */
-public class Validate implements Question<Boolean> {
+public class Element implements Question<Boolean> {
 
     private final String says;
     private final Target target;
 
-    public Validate(Target target, String expectedMessage) {
+    public Element(Target target, String expectedMessage) {
         this.says = expectedMessage;
         this.target = target;
     }
@@ -23,8 +23,8 @@ public class Validate implements Question<Boolean> {
         return target.resolveFor(actor).getText().contains(says);
     }
 
-    public static ValidateBuilder thisTarget(Target target) {
-        return Validate.builder().target(target);
+    public static ValidateBuilder withTarget(Target target) {
+        return Element.builder().target(target);
     }
 
     private static ValidateBuilder builder() {
@@ -40,9 +40,11 @@ public class Validate implements Question<Boolean> {
             return this;
         }
 
-        public Validate says(String says) {
+        public Element says(String says) {
             this.says = says;
-            return new Validate(this.target, this.says);
+            return new Element(this.target, this.says);
         }
+
+
     }
 }

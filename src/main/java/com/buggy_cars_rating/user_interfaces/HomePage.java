@@ -24,4 +24,7 @@ public class HomePage extends PageObject {
 
     public static final Target LOGOUT_BUTTON = Target.the("Logout button")
             .locatedBy("/html/body/my-app/header/nav/div/my-login/div/ul/li[3]/a");
+
+    public static final Target MOST_POPULAR_CAR_LINK = Target.the("Most popular car model link")
+            .locatedBy("/html/body/my-app/div/main/my-home/div/div[2]/div/a");
 }

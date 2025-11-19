@@ -2,7 +2,7 @@ package com.buggy_cars_rating.stepdefinitions;
 
 import com.buggy_cars_rating.dto.UserDto;
 import com.buggy_cars_rating.interactions.ClickOn;
-import com.buggy_cars_rating.questions.Validate;
+import com.buggy_cars_rating.questions.Element;
 import com.buggy_cars_rating.tasks.FillLoginForm;
 import com.buggy_cars_rating.tasks.FillRegistrationForm;
 import com.buggy_cars_rating.tasks.OpenThe;
@@ -20,7 +20,6 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
-import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
 
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
@@ -83,7 +82,7 @@ public class HU2StepDefinitions {
 
     @Then("the system shows me a welcome message {string}")
     public void theSystemShowsMeAWelcomeMessage(String message) {
-        user.should(seeThat(Validate.thisTarget(HomePage.WELCOME_MESSAGE).says(message)));
+        user.should(seeThat(Element.withTarget(HomePage.WELCOME_MESSAGE).says(message)));
         WaitTime.waitFiveSeconds();
     }
 
@@ -100,6 +99,6 @@ public class HU2StepDefinitions {
 
     @Then("the system shows me an error message {string}")
     public void theSystemShowsMeAnErrorMessage(String message) {
-        user.should(seeThat(Validate.thisTarget(HomePage.INVALID_LOGIN_MESSAGE).says(message)));
+        user.should(seeThat(Element.withTarget(HomePage.INVALID_LOGIN_MESSAGE).says(message)));
     }
 }

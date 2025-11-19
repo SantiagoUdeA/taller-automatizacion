@@ -2,12 +2,15 @@ package com.buggy_cars_rating.stepdefinitions;
 
 import com.buggy_cars_rating.dto.UserDto;
 import com.buggy_cars_rating.questions.Element;
-import com.buggy_cars_rating.tasks.FillRegistrationForm;
+import com.buggy_cars_rating.questions.IsVisible;
+import com.buggy_cars_rating.tasks.NavigateTo;
 import com.buggy_cars_rating.tasks.OpenThe;
-import com.buggy_cars_rating.user_interfaces.RegisterPage;
+import com.buggy_cars_rating.user_interfaces.CarModelPage;
+import com.buggy_cars_rating.user_interfaces.HomePage;
 import com.buggy_cars_rating.utils.RandomUserFactory;
 import com.buggy_cars_rating.utils.WaitTime;
 import io.cucumber.java.Before;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -20,7 +23,7 @@ import org.openqa.selenium.WebDriver;
 
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 
-public class HU1StepDefinitions {
+public class HU3StepDefinitions {
 
     private final UserDto userDto = RandomUserFactory.generateRandomUser();
     public final Actor user = Actor.named(userDto.firstName());
@@ -35,40 +38,27 @@ public class HU1StepDefinitions {
         OnStage.theActorCalled(userDto.firstName());
     }
 
-    @Given("that I am on the registration page")
-    public void thatIAmOnTheRegistrationPage() {
-        user.attemptsTo(OpenThe.navigator(new RegisterPage()));
+    @Given("that I am on the home page")
+    public void thatIAmOnTheHomePage() {
+        user.attemptsTo(OpenThe.navigator(new HomePage()));
         WaitTime.waitFiveSeconds();
     }
 
-    @When("I enter my registration data")
-    public void iEnterMyRegistrationData() {
-        user.attemptsTo(
-            FillRegistrationForm.withData(
-                    userDto.username(),
-                    userDto.firstName(),
-                    userDto.lastName(),
-                    userDto.password()
-            )
-        );
+    @When("I select the most popular car")
+    public void iSelectTheMostPopularCar() {
+        user.attemptsTo(NavigateTo.theMostPopularCar());
         WaitTime.waitFiveSeconds();
     }
 
-    @Then("the system shows me the message {string}")
-    public void theSystemShowsMeTheMessage(String message) {
-        user.should(seeThat(Element.withTarget(RegisterPage.ALERT_MESSAGE).says(message)));
-        WaitTime.waitFiveSeconds();
+    @Then("the system shows me the car specifications")
+    public void theSystemShowsMeTheCarSpecifications() {
+        user.should(seeThat(IsVisible.element(CarModelPage.SPECIFICATIONS_CARD)));
     }
 
-    @When("I enter a password {string}")
-    public void iEnterAPasswordPassword(String password) {
-        user.attemptsTo(
-                FillRegistrationForm.withData(
-                        userDto.username(),
-                        userDto.firstName(),
-                        userDto.lastName(),
-                        password
-                )
-        );
+    @And("the number of votes")
+    public void theNumberOfRatings() {
+        user.should(seeThat(IsVisible.element(CarModelPage.NUMBER_OF_VOTES)));
+        WaitTime.waitFiveSeconds();
     }
 }
+
