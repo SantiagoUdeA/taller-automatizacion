@@ -6,12 +6,12 @@ import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
-        features = "src/test/resources/features/hu1_acceso.feature",
+        features = "src/test/resources/features/hu1_access.feature",
         glue = "com/courier_sync/stepdefinitions",
         snippets = CucumberOptions.SnippetType.CAMELCASE,
         plugin = {
                 "pretty",
-                "json:target/cucumber/hu2_login.json"
+                "json:target/cucumber/hu1_access.json"
         }
 )
 public class LoginRunner {}
