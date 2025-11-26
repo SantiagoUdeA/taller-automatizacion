@@ -1,6 +1,7 @@
 package com.courier_sync.questions;
 
 import net.serenitybdd.screenplay.Question;
+import net.serenitybdd.screenplay.questions.Text;
 import net.serenitybdd.screenplay.targets.Target;
 
 
@@ -23,7 +24,7 @@ public class TargetHasMessage implements Question<Boolean> {
 
     @Override
     public Boolean answeredBy(net.serenitybdd.screenplay.Actor actor) {
-        String actualMessage = target.resolveFor(actor).getText();
+        String actualMessage = Text.of(target).answeredBy(actor);
         return actualMessage.equals(expectedMessage);
     }
 }

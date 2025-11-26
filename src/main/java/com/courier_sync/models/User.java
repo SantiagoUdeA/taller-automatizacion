@@ -16,10 +16,14 @@ public class User {
      * definidas en serenity.conf
      * @return Usuario con credenciales desde configuración
      */
-    public static User fromEnvironment() {
+    public static User valid() {
         return new User(
                 ConfigurationReader.getUserEmail(),
                 ConfigurationReader.getUserPassword()
         );
+    }
+
+    public static User invalid() {
+        return new User("invalid@gmail.com","invalid");
     }
 }

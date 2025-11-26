@@ -10,11 +10,11 @@ import net.serenitybdd.screenplay.actions.Open;
 /*
  * Task que permite abrir una página web especificada como un PageObject.
  */
-public class OpenThe implements Task {
+public class NavigateTo implements Task {
 
     private final PageObject page;
 
-    public OpenThe(PageObject page){
+    public NavigateTo(PageObject page){
         this.page = page;
     }
 
@@ -28,7 +28,7 @@ public class OpenThe implements Task {
         return Task.super.then(nextPerformable);
     }
 
-    public static OpenThe navigator(PageObject page) {
-        return Tasks.instrumented(OpenThe.class, page);
+    public static NavigateTo page(PageObject page) {
+        return Tasks.instrumented(NavigateTo.class, page);
     }
 }

@@ -15,6 +15,14 @@ public class Wait {
         }
     }
 
+    public static void forMilliseconds(int milliseconds) {
+        try {
+            Thread.sleep(milliseconds);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+    }
+
     public static void fiveSeconds() {
         forSeconds(5);
     }

@@ -5,16 +5,16 @@ import net.serenitybdd.screenplay.Question;
 
 import static net.serenitybdd.core.Serenity.getWebdriverManager;
 
-public class Pathname implements Question<Boolean> {
+public class CurrentPath implements Question<Boolean> {
 
     private final String expectedPathname;
 
-    public Pathname(String expectedPathname) {
+    public CurrentPath(String expectedPathname) {
         this.expectedPathname = expectedPathname;
     }
 
-    public static Pathname isEqualTo(String expectedPathname) {
-        return new Pathname(expectedPathname);
+    public static CurrentPath isEqualTo(String expectedPathname) {
+        return new CurrentPath(expectedPathname);
     }
 
     @Override
